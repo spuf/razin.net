@@ -3,31 +3,29 @@ import Head from 'next/head'
 import styles from '../styles/Resume.module.css'
 
 const Resume: NextPage = () => {
+  const resume = {
+    name: 'Arseny Razin',
+    location: 'Saint Petersburg, Russia',
+    email: 'arseny@razin.net',
+    github: 'spuf',
+  }
+
   return (
     <div className={styles.container}>
       <Head>
         <meta name="robots" content="noindex" />
-        <title>Arseny Razin</title>
+        <title>{resume.name}</title>
       </Head>
 
-      <h1>Arseny Razin</h1>
+      <h1>{resume.name}</h1>
       <p>
-        Location: Saint Petersburg, Russia
+        Location: {resume.location}
         <br />
-        Mobile phone: <a href="tel:+79313115668">+7 (931) 311-56-68</a>
-        <br />
-        E-mail: <a href="mailto:spufru@gmail.com">spufru@gmail.com</a>
-        <br />
-        Skype: arseniy.razin
+        E-mail: <a href={`mailto:${resume.email}`}>{resume.email}</a>
         <br />
         Github:{' '}
-        <a href="https://github.com/spuf" target="_blank" rel="noreferrer">
-          https://github.com/spuf
-        </a>
-        <br />
-        Website:{' '}
-        <a href="https://arseny.me" target="_blank" rel="noreferrer">
-          https://arseny.me
+        <a href={`https://github.com/:${resume.github}`} target="_blank" rel="noreferrer">
+          `https://github.com/:${resume.github}`
         </a>
       </p>
 
@@ -40,7 +38,7 @@ const Resume: NextPage = () => {
         <em>Position:</em> Backend Engineer
       </p>
       <ul>
-        <li>DevOps things.</li>
+        <li>Microservices, DevOps, SRE.</li>
         <li>Fast-paced feature implementing.</li>
         <li>Architectural changes.</li>
       </ul>
