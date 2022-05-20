@@ -1,0 +1,45 @@
+.container {
+  width: 700px;
+  margin: 20px auto;
+  font-size: 1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.container a {
+  color: blue;
+}
+
+.container h1,
+.container h2 {
+  margin: 0.5em 20px;
+}
+
+.container h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.container h2 {
+  font-size: 1.25em;
+}
+
+.container p,
+.container ul {
+  margin: 0.75em 0;
+}
+
+.container p + ul {
+  margin-top: -0.75em;
+}
+
+.container ul > li {
+  margin-left: 20px;
+}
+
+.container img {
+  max-width: 700px;
+}
+
+.container hr {
+  margin: 10px 0;
+}
