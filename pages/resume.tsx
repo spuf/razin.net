@@ -24,8 +24,8 @@ const Resume: NextPage = () => {
         E-mail: <a href={`mailto:${resume.email}`}>{resume.email}</a>
         <br />
         Github:{' '}
-        <a href={`https://github.com/:${resume.github}`} target="_blank" rel="noreferrer">
-          `https://github.com/:${resume.github}`
+        <a href={`https://github.com/${resume.github}`} target="_blank" rel="noreferrer">
+          https://github.com/{resume.github}
         </a>
       </p>
 
