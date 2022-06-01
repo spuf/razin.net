@@ -1,21 +1,7 @@
 .container {
+  font-family: Helvetica, Arial, sans-serif;
   padding: 1rem 2rem;
   margin: 1rem auto;
-}
-
-@media print {
-  @page {
-    size: 210mm 297mm;
-  }
-}
-
-@media only screen and (min-width: 210mm) {
-  .container {
-    width: 210mm;
-    display: grid;
-    grid-template: auto / 40mm 1fr;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  }
 }
 
 .container h1 {
@@ -26,25 +12,80 @@
 .container h2 {
   font-size: 1rem;
   font-weight: 800;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .container h3 {
   font-size: 1rem;
   font-weight: 600;
+  margin: 0;
+  margin-bottom: 0.2rem;
 }
 
 .container ul {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .header {
   grid-column-start: 2;
-  border-bottom: 0.2rem solid black;
   padding-bottom: 1rem;
+  border-bottom: 0.2rem solid black;
   margin-bottom: 1rem;
 }
+
+.contact {
+  margin-bottom: 0.2rem;
+}
+
+.dash {
+  display: none;
+}
+
 .title {
 }
+
 .content {
+}
+
+.dates {
+  margin-bottom: 0.2rem;
+}
+
+.block {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 210mm) {
+  .container {
+    width: 210mm;
+    display: grid;
+    grid-template: auto / 40mm 1fr;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  }
+  .contact {
+    display: inline-block;
+  }
+  .dash {
+    display: inline-block;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+
+@media print {
+  @page {
+    size: 210mm 297mm;
+  }
+  .container {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  .container a {
+    text-decoration: none;
+  }
 }

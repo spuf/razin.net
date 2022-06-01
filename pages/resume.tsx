@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Resume.module.css'
+import { DateTime } from 'luxon'
 
 const Resume: NextPage = () => {
   const resume = {
@@ -8,127 +9,179 @@ const Resume: NextPage = () => {
     location: 'Saint Petersburg, Russia',
     email: 'arseny@razin.net',
     github: 'spuf',
+    workExperience: [
+      {
+        start: '2017-01-01',
+        end: null,
+        company: 'ONDOC',
+        website: 'https://ondoc.me',
+        position: 'Backend Engineer',
+        achiements: ['Microservices, DevOps, SRE.', 'Fast-paced feature implementing.', 'Architectural changes.'],
+      },
+      {
+        start: '2016-09-01',
+        end: '2016-12-01',
+        company: 'Encoding.com',
+        website: 'https://www.encoding.com',
+        position: 'Backend Engineer',
+        achiements: ['Developing analytics system.', 'Developing validation framework for video encoding.'],
+      },
+      {
+        start: '2014-02-01',
+        end: '2016-05-01',
+        company: 'Dalee Internet Agency',
+        website: 'https://www.dalee.ru',
+        position: 'Full Stack Developer',
+        achiements: [
+          'Developing websites using PHP, JavaScript, PostgreSQL.',
+          'Developing and refactoring microservices using Node.js, Ruby, Redis.',
+          'Working on the MegaFon website (BEM methodology and all techs above).',
+          'Introducing Continuous Integration and containerization to current workflows.',
+        ],
+      },
+      {
+        start: '2013-09-01',
+        end: '2014-01-01',
+        company: '2Comrades',
+        website: 'http://twocomrades.ru',
+        position: 'JavaScript Developer',
+        achiements: [
+          'Developing frontend using jQuery, Backbone, Highcharts, HTML5 Canvas.',
+          'Working with different maps services APIs.',
+        ],
+      },
+      {
+        start: '2012-02-01',
+        end: '2013-08-01',
+        company: 'AwardWallet LLC',
+        website: 'https://awardwallet.com',
+        position: 'Full Stack Developer',
+        achiements: [
+          'Refactoring monolith PHP application using unit testing (PHPUnit).',
+          'Developing website on Symfony2 (PHP, MySQL).',
+          'Developing HTML5 mobile app using PhoneGap platform (JavaScript, Objective-C, Java).',
+        ],
+      },
+      {
+        start: '2010-07-01',
+        end: '2010-08-01',
+        company: 'ER-Telecom Holding',
+        website: 'https://ertelecom.ru',
+        position: 'PHP Developer',
+        achiements: ['Developing intranet website using Drupal (PHP).'],
+      },
+    ],
+    education: [
+      {
+        start: '2013-09-01',
+        end: '2015-06-01',
+        school: 'Higher School of Economics',
+        location: 'Moscow, Russia',
+        degree: "Master's degree in Software\u00A0Engineering",
+      },
+      {
+        start: '2009-09-01',
+        end: '2013-06-01',
+        school: 'Higher School of Economics',
+        location: 'Perm, Russia',
+        degree: "Bachelor's degree in Business\u00A0Informatics",
+      },
+    ],
+    skills: [
+      'Primary: PHP, Symfony, JavaScript, Node.js, React, Vagrant, Ansible, Docker.',
+      'Secondary: ElasticSearch, RegExp, Ruby, Nginx, Bash.',
+      'Tools: Git.',
+    ],
+    languages: ['Russian — native', 'English — advanced'],
   }
 
   return (
     <div className={styles.container}>
       <Head>
         <meta name="robots" content="noindex" />
-        <title>{resume.fullName}</title>
+        <title>Resume - {resume.fullName}</title>
       </Head>
-
       <div className={styles.header}>
-        <h1>{resume.fullName}</h1>
-        <p>
-          {resume.location} &mdash; <a href={`mailto:${resume.email}`}>{resume.email}</a> &mdash;{' '}
-          <a href={`https://github.com/${resume.github}`} target="_blank" rel="noreferrer">
-            https://github.com/{resume.github}
+        <h1>{resume.fullName}</h1> <div className={styles.contact}>{resume.location}</div>
+        <div className={styles.dash}> &mdash; </div>
+        <div className={styles.contact}>
+          <a href={`mailto:${resume.email}`} target="_blank" rel="noreferrer">
+            {resume.email}
           </a>
-        </p>
+        </div>
+        <div className={styles.dash}> &mdash; </div>
+        <div className={styles.contact}>
+          <a href={`https://github.com/${resume.github}`} target="_blank" rel="noreferrer">
+            github.com/{resume.github}
+          </a>
+        </div>
       </div>
-
       <div className={styles.title}>
         <h2>Work experience</h2>
       </div>
       <div className={styles.content}>
-        <h3>01.2017 &ndash; present time</h3>
-        <p>
-          <a href="http://ondoc.me">OnDoc</a>
-          <br />
-          <em>Position:</em> Backend Engineer
-        </p>
-        <ul>
-          <li>Microservices, DevOps, SRE.</li>
-          <li>Fast-paced feature implementing.</li>
-          <li>Architectural changes.</li>
-        </ul>
-
-        <h3>09.2016 &ndash; 12.2016</h3>
-        <p>
-          <a href="http://www.encoding.com">Encoding.com</a>
-          <br />
-          <em>Position:</em> Backend Engineer
-        </p>
-        <ul>
-          <li>Developing analytics system.</li>
-          <li>Developing validation framework for video encoding.</li>
-        </ul>
-
-        <h3>02.2014 &ndash; 05.2016</h3>
-        <p>
-          <a href="http://www.dalee.ru">Dalee Internet Agency</a>
-          <br />
-          <em>Position:</em> Full Stack Developer
-        </p>
-        <ul>
-          <li>Developing websites using PHP, JavaScript, PostgreSQL.</li>
-          <li>Developing and refactoring microservices using Node.js, Ruby, Redis.</li>
-          <li>
-            Working on the <a href="http://moscow.megafon.ru">MegaFon</a> website (BEM methodology and all techs above).
-          </li>
-          <li>Introducing Continuous Integration and containerization to current workflows.</li>
-        </ul>
-
-        <h3>09.2013 &ndash; 01.2014</h3>
-        <p>
-          <a href="http://twocomrades.ru">2Comrades</a>
-          <br />
-          <em>Position:</em> JavaScript Developer
-        </p>
-        <ul>
-          <li>Developing frontend using jQuery, Backbone, Highcharts, HTML5 Canvas.</li>
-          <li>Working with different maps services APIs.</li>
-        </ul>
-
-        <h3>02.2012 &ndash; 08.2013</h3>
-        <p>
-          <a href="http://awardwallet.com">AwardWallet LLC</a>
-          <br />
-          <em>Position:</em> Full Stack Developer
-        </p>
-        <ul>
-          <li>Refactoring monolith PHP application using unit testing (PHPUnit).</li>
-          <li>Developing website on Symfony2 (PHP, MySQL).</li>
-          <li>Developing HTML5 mobile app using PhoneGap platform (JavaScript, Objective-C, Java).</li>
-        </ul>
-
-        <h3>07.2010 &ndash; 08.2010</h3>
-        <p>
-          <a href="http://ertelecom.ru">ER-Telecom Holding</a>
-          <br />
-          <em>Position:</em> PHP Developer
-        </p>
-        <ul>
-          <li>Developing intranet website using Drupal (PHP).</li>
-        </ul>
+        {resume.workExperience.map((v) => (
+          <div className={styles.block} key={v.start}>
+            <h3>
+              <div className={styles.contact}>{v.position}</div>
+              <div className={styles.dash}> &mdash; </div>
+              <div className={styles.contact}>
+                <a href={v.website} target="_blank" rel="noreferrer">
+                  {v.company}
+                </a>
+              </div>
+            </h3>
+            <div className={styles.dates}>
+              {DateTime.fromISO(v.start).toFormat('LLL yyyy')} &ndash;{' '}
+              {v.end ? DateTime.fromISO(v.end).toFormat('LLL yyyy') : 'present time'}
+            </div>
+            <ul>
+              {v.achiements.map((a) => (
+                <li key={a}>{a}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div className={styles.title}>
         <h2>Education</h2>
       </div>
       <div className={styles.content}>
-        <h3>2013 &ndash; 2015</h3> Higher School of Economics <em>(Moscow, Russia)</em>
-        <p>Master&#8217;s degree in Software Engineering (in English)</p>
-        <h3>2009 &ndash; 2013</h3> Higher School of Economics <em>(Perm, Russia)</em>
-        <p>Bachelor&#8217;s degree in Business Informatics</p>
+        {resume.education.map((v) => (
+          <div className={styles.block} key={v.start}>
+            <h3>{v.degree}</h3>
+            <div className={styles.dates}>
+              {DateTime.fromISO(v.start).toFormat('yyyy')} &ndash; {DateTime.fromISO(v.end).toFormat('yyyy')}
+            </div>
+            <div>
+              {v.school} ({v.location})
+            </div>
+          </div>
+        ))}
       </div>
       <div className={styles.title}>
         <h2>Skills</h2>
       </div>
       <div className={styles.content}>
-        <ul>
-          <li>Primary: PHP, Symfony, JavaScript, Node.js, React, Vagrant, Ansible, Docker.</li>
-          <li>Secondary: ElasticSearch, RegExp, Ruby, Nginx, Bash.</li>
-          <li>Tools: Git.</li>
-        </ul>
+        <div className={styles.block}>
+          <ul>
+            {resume.skills.map((v) => (
+              <li key={v}>{v}</li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className={styles.title}>
         <h2>Languages</h2>
       </div>
       <div className={styles.content}>
-        <ul>
-          <li>Russian &#8212; native</li>
-          <li>English &#8212; advanced</li>
-        </ul>
+        <div className={styles.block}>
+          <ul>
+            {resume.languages.map((v) => (
+              <li key={v}>{v}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   )
