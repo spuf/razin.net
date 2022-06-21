@@ -10,7 +10,8 @@
     "lint": "next lint",
     "check": "tsc",
     "fmt": "prettier --ignore-path .gitignore --write .",
-    "test": "npm run fmt && npm run check && npm run lint"
+    "test": "npm run fmt && npm run check && npm run lint",
+    "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v1.22.2 npx playwright test -u"
   },
   "dependencies": {
     "luxon": "^2.4.0",
@@ -20,6 +21,7 @@
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.22.2",
     "@types/luxon": "^2.3.2",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.9",
