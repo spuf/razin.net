@@ -11,18 +11,18 @@
     "check": "tsc",
     "fmt": "prettier --ignore-path .gitignore --write .",
     "test": "npm run fmt && npm run check && npm run lint",
-    "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v1.22.2 npx playwright test -u"
+    "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v$(node -e \"console.log(require('./package.json').devDependencies['@playwright/test'])\") npx playwright test -u"
   },
   "dependencies": {
-    "luxon": "^2.4.0",
+    "luxon": "^3.0.0",
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.22.2",
-    "@types/luxon": "^2.3.2",
+    "@playwright/test": "1.25.0",
+    "@types/luxon": "^3.0.0",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
