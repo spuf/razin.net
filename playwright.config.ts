@@ -10,18 +10,6 @@ const config: PlaywrightTestConfig = {
   },
   projects: [
     {
-      name: 'chrome',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'crome-hidpi',
-      use: { ...devices['Desktop Chrome HiDPI'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
       name: 'safari',
       use: { ...devices['Desktop Safari'] },
     },
@@ -30,28 +18,12 @@ const config: PlaywrightTestConfig = {
       use: { ...devices['Desktop Safari'], colorScheme: 'dark' },
     },
     {
-      name: 'ipad',
-      use: { ...devices['iPad Pro 11 landscape'] },
+      name: 'iphone',
+      use: { ...devices['iPhone 13'] },
     },
     {
-      name: 'iphone-se',
-      use: { ...devices['iPhone SE'] },
-    },
-    {
-      name: 'iphone-mini',
-      use: { ...devices['iPhone 13 Mini'] },
-    },
-    {
-      name: 'iphone-pro',
-      use: { ...devices['iPhone 13 Pro'] },
-    },
-    {
-      name: 'iphone-pro-dark',
-      use: { ...devices['iPhone 13 Pro'], colorScheme: 'dark' },
-    },
-    {
-      name: 'iphone-pro-max',
-      use: { ...devices['iPhone 13 Pro Max'] },
+      name: 'iphone-dark',
+      use: { ...devices['iPhone 13'], colorScheme: 'dark' },
     },
   ],
 }
