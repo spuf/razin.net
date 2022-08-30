@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/Resume.module.css'
 import { DateTime } from 'luxon'
 
@@ -102,14 +103,17 @@ const Resume: NextPage = () => {
         <title>Resume - {resume.fullName}</title>
       </Head>
       <div className={styles.header}>
-        <h1>{resume.fullName}</h1> <div className={styles.contact}>{resume.location}</div>
-        <div className={styles.dash}> &mdash; </div>
+        <h1>
+          <Link href={'/'} prefetch={false}>
+            {resume.fullName}
+          </Link>
+        </h1>
+        <div className={styles.contact}>{resume.location}</div>
         <div className={styles.contact}>
           <a href={`mailto:${resume.email}`} target="_blank" rel="noreferrer">
             {resume.email}
           </a>
         </div>
-        <div className={styles.dash}> &mdash; </div>
         <div className={styles.contact}>
           <a href={`https://github.com/${resume.github}`} target="_blank" rel="noreferrer">
             github.com/{resume.github}
@@ -122,15 +126,12 @@ const Resume: NextPage = () => {
       <div className={styles.content}>
         {resume.workExperience.map((v) => (
           <div className={styles.block} key={v.start}>
-            <h3>
-              <div className={styles.contact}>{v.position}</div>
-              <div className={styles.dash}> &mdash; </div>
-              <div className={styles.contact}>
-                <a href={v.website} target="_blank" rel="noreferrer">
-                  {v.company}
-                </a>
-              </div>
-            </h3>
+            <h3>{v.position}</h3>
+            <div className={styles.company}>
+              <a href={v.website} target="_blank" rel="noreferrer">
+                {v.company}
+              </a>
+            </div>
             <div className={styles.dates}>
               {DateTime.fromISO(v.start).toFormat('LLL yyyy')} &ndash;{' '}
               {v.end ? DateTime.fromISO(v.end).toFormat('LLL yyyy') : 'present time'}
