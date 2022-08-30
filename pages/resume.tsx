@@ -7,7 +7,6 @@ import { DateTime } from 'luxon'
 const Resume: NextPage = () => {
   const resume = {
     fullName: 'Arseny Razin',
-    location: 'Saint Petersburg, Russia',
     email: 'arseny@razin.net',
     github: 'spuf',
     workExperience: [
@@ -17,7 +16,11 @@ const Resume: NextPage = () => {
         company: 'ONDOC',
         website: 'https://ondoc.me',
         position: 'Backend Engineer',
-        achiements: ['Microservices, DevOps, SRE.', 'Fast-paced feature implementing.', 'Architectural changes.'],
+        achiements: [
+          'Maintaining infrastracture on bare-metal servers.',
+          'Introducing architectural practice to achieve fast feature implementation.',
+          'Evaluating system to comply with goverment restrictions.',
+        ],
       },
       {
         start: '2016-09-01',
@@ -36,7 +39,6 @@ const Resume: NextPage = () => {
         achiements: [
           'Developing websites using PHP, JavaScript, PostgreSQL.',
           'Developing and refactoring microservices using Node.js, Ruby, Redis.',
-          'Working on the MegaFon website (BEM methodology and all techs above).',
           'Introducing Continuous Integration and containerization to current workflows.',
         ],
       },
@@ -76,15 +78,15 @@ const Resume: NextPage = () => {
       {
         start: '2013-09-01',
         end: '2015-06-01',
-        school: 'Higher School of Economics',
-        location: 'Moscow, Russia',
+        school: 'National Research University Higher School of Economics',
+        location: 'Russia',
         degree: "Master's degree in Software\u00A0Engineering",
       },
       {
         start: '2009-09-01',
         end: '2013-06-01',
-        school: 'Higher School of Economics',
-        location: 'Perm, Russia',
+        school: 'National Research University Higher School of Economics',
+        location: 'Russia',
         degree: "Bachelor's degree in Business\u00A0Informatics",
       },
     ],
@@ -93,7 +95,6 @@ const Resume: NextPage = () => {
       'Secondary: ElasticSearch, RegExp, Ruby, Nginx, Bash.',
       'Tools: Git.',
     ],
-    languages: ['Russian — native', 'English — advanced'],
   }
 
   return (
@@ -108,7 +109,6 @@ const Resume: NextPage = () => {
             {resume.fullName}
           </Link>
         </h1>
-        <div className={styles.contact}>{resume.location}</div>
         <div className={styles.contact}>
           <a href={`mailto:${resume.email}`} target="_blank" rel="noreferrer">
             {resume.email}
@@ -167,18 +167,6 @@ const Resume: NextPage = () => {
         <div className={styles.block}>
           <ul>
             {resume.skills.map((v) => (
-              <li key={v}>{v}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className={styles.title}>
-        <h2>Languages</h2>
-      </div>
-      <div className={styles.content}>
-        <div className={styles.block}>
-          <ul>
-            {resume.languages.map((v) => (
               <li key={v}>{v}</li>
             ))}
           </ul>
