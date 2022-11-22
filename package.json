@@ -21,7 +21,7 @@
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.27.1",
+    "@playwright/test": "1.28.0",
     "@types/luxon": "^3.0.0",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.9",
