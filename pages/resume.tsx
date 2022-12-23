@@ -17,9 +17,9 @@ const Resume: NextPage = () => {
         website: 'https://ondoc.me',
         position: 'Backend Engineer',
         achiements: [
-          'Maintaining infrastracture on bare-metal servers.',
+          'Maintaining infrastructure on bare-metal servers.',
           'Introducing architectural practice to achieve fast feature implementation.',
-          'Evaluating system to comply with goverment restrictions.',
+          'Evaluating system to comply with government restrictions.',
         ],
       },
       {
@@ -28,7 +28,7 @@ const Resume: NextPage = () => {
         company: 'Encoding.com',
         website: 'https://www.encoding.com',
         position: 'Backend Engineer',
-        achiements: ['Developing analytics system.', 'Developing validation framework for video encoding.'],
+        achiements: ['Maintaining in-house advertising analytics system.', 'Developing validation framework for video encoding.'],
       },
       {
         start: '2014-02-01',
@@ -37,9 +37,9 @@ const Resume: NextPage = () => {
         website: 'https://www.dalee.ru',
         position: 'Full Stack Developer',
         achiements: [
-          'Developing websites using PHP, JavaScript, PostgreSQL.',
-          'Developing and refactoring microservices using Node.js, Ruby, Redis.',
-          'Introducing Continuous Integration and containerization to current workflows.',
+          'Developing websites from small landing pages to national mobile providers.',
+          'Refactoring ancient microservices to run them in cloud environments.',
+          'Introducing continuous integration and containerization to current workflows.',
         ],
       },
       {
@@ -49,7 +49,7 @@ const Resume: NextPage = () => {
         website: 'http://twocomrades.ru',
         position: 'JavaScript Developer',
         achiements: [
-          'Developing frontend using jQuery, Backbone, Highcharts, HTML5 Canvas.',
+          'Developing a cloud platform for taxi and transport services.',
           'Working with different maps services APIs.',
         ],
       },
@@ -60,9 +60,9 @@ const Resume: NextPage = () => {
         website: 'https://awardwallet.com',
         position: 'Full Stack Developer',
         achiements: [
-          'Refactoring monolith PHP application using unit testing (PHPUnit).',
-          'Developing website on Symfony2 (PHP, MySQL).',
-          'Developing HTML5 mobile app using PhoneGap platform (JavaScript, Objective-C, Java).',
+          'Refactoring monolith PHP application.',
+          'Developing API gateways to collect and consolidate data from numerous travel agencies.',
+          'Maintaining mobile application.',
         ],
       },
       {
@@ -71,7 +71,7 @@ const Resume: NextPage = () => {
         company: 'ER-Telecom Holding',
         website: 'https://ertelecom.ru',
         position: 'PHP Developer',
-        achiements: ['Developing intranet website using Drupal (PHP).'],
+        achiements: ['Developing intranet websites.'],
       },
     ],
     education: [
