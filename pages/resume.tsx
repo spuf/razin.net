@@ -91,9 +91,8 @@ const Resume: NextPage = () => {
       },
     ],
     skills: [
-      'Primary: PHP, Symfony, JavaScript, Node.js, React, Vagrant, Ansible, Docker.',
-      'Secondary: ElasticSearch, RegExp, Ruby, Nginx, Bash.',
-      'Tools: Git.',
+      'Primary: Go, Node.js, PHP (Symfony), PostgreSQL, Redis, Docker, Ansible.',
+      'Secondary: React, Python, Nginx, Linux.',
     ],
   }
 
