@@ -28,7 +28,10 @@ const Resume: NextPage = () => {
         company: 'Encoding.com',
         website: 'https://www.encoding.com',
         position: 'Backend Engineer',
-        achiements: ['Maintaining in-house advertising analytics system.', 'Developing validation framework for video encoding.'],
+        achiements: [
+          'Maintaining in-house advertising analytics system.',
+          'Developing validation framework for video encoding.',
+        ],
       },
       {
         start: '2014-02-01',
