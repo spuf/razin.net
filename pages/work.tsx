@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Resume.module.css'
+import styles from '../styles/work.module.css'
 import { DateTime } from 'luxon'
 
-const Resume: NextPage = () => {
+const Work: NextPage = () => {
   const resume = {
     fullName: 'Arseny Razin',
     email: 'arseny@razin.net',
@@ -178,4 +178,4 @@ const Resume: NextPage = () => {
   )
 }
 
-export default Resume
+export default Work
