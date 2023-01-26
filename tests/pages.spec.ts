@@ -5,7 +5,7 @@ test('index', async ({ page }) => {
   await expect(page).toHaveScreenshot()
 })
 
-test('resume', async ({ page }) => {
-  await page.goto('/resume')
+test('work', async ({ page }) => {
+  await page.goto('/work')
   await expect(page).toHaveScreenshot()
 })
