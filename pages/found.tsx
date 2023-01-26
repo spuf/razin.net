@@ -8,7 +8,7 @@ const Found: NextPage = () => {
         <meta name="robots" content="noindex" />
         <title>Found</title>
       </Head>
-      <div style={{margin: '1rem'}}>
+      <div style={{ margin: '1rem' }}>
         <a href="mailto:arseny@razin.net">arseny@razin.net</a>
       </div>
     </div>
