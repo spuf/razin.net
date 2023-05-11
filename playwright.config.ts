@@ -1,7 +1,6 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test'
 
 const config: PlaywrightTestConfig = {
-  outputDir: '/tmp',
   webServer: {
     command: 'npm ci && npm run build && npm run start',
     port: 3000,
