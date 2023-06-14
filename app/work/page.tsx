@@ -1,10 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/work.module.css'
+import styles from './page.module.css'
 import { DateTime } from 'luxon'
 
-const Work: NextPage = () => {
+export const metadata = {
+  title: 'Resume - Arseny Razin',
+  robots: {
+    index: false,
+  },
+}
+
+export default function Work() {
   const resume = {
     fullName: 'Arseny Razin',
     email: 'arseny@razin.net',
@@ -101,10 +106,6 @@ const Work: NextPage = () => {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <meta name="robots" content="noindex" />
-        <title>Resume - {resume.fullName}</title>
-      </Head>
       <div className={styles.header}>
         <h1>
           <Link href={'/'} prefetch={false}>
@@ -177,5 +178,3 @@ const Work: NextPage = () => {
     </div>
   )
 }
-
-export default Work
