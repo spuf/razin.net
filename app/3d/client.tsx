@@ -1,8 +1,8 @@
 'use client'
-
+import * as THREE from 'three'
 import { Suspense, useImperativeHandle, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Preload, PerspectiveCamera, View, Text3D, Center, MeshDistortMaterial } from '@react-three/drei'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Preload, PerspectiveCamera, View, Text3D, Center, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 import tunnelRat from 'tunnel-rat'
 
 const tunnel = tunnelRat()
@@ -52,9 +52,17 @@ export default function Client() {
 }
 
 function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElement> }) {
-  const meshRef: any = useRef<HTMLElement>(null)
-  useFrame(({ clock }) => {
-    meshRef.current.rotation.y = Math.sin(clock.getElapsedTime()) / 10
+  const meshRef = useRef<THREE.Mesh>(null)
+  const { viewport } = useThree()
+  useFrame(({ clock, mouse }) => {
+    if (!meshRef?.current) {
+      return
+    }
+    const x = (mouse.x * viewport.width) / 10
+    const y = (mouse.y * viewport.height) / 10
+    meshRef.current.lookAt(x, y, 1)
+    meshRef.current.rotation.x += Math.cos(clock.getElapsedTime() / 4) / 10
+    meshRef.current.rotation.y += Math.sin(clock.getElapsedTime() / 2) / 10
   })
 
   return (
@@ -64,25 +72,28 @@ function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElemen
           <Text3D
             font={'/helvetiker_regular.typeface.json'}
             size={0.5}
-            height={0.2}
-            curveSegments={10}
+            height={0.01}
+            curveSegments={20}
             bevelEnabled
-            bevelThickness={0.01}
+            bevelThickness={0.05}
             bevelSize={0.02}
-            bevelSegments={10}
+            bevelSegments={20}
           >
             Arseny Razin
-            <MeshDistortMaterial color={'deepskyblue'} />
+            <meshPhongMaterial color={'black'} specular={'white'} shininess={30} />
           </Text3D>
         </Center>
       </mesh>
 
       <Suspense fallback={null}>
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.1} />
         <pointLight position={[20, 30, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} color="blue" />
+        <pointLight position={[-20, 30, -10]} intensity={0.5} />
         <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
+        <Preload all />
       </Suspense>
+      <AdaptiveDpr pixelated />
+      <AdaptiveEvents />
     </View>
   )
 }
