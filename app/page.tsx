@@ -4,7 +4,7 @@ export const metadata = {
   title: 'Arseny Razin',
 }
 
-export default function Home() {
+export default function Index() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
