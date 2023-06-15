@@ -54,15 +54,20 @@ export default function Client() {
 function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElement> }) {
   const meshRef = useRef<THREE.Mesh>(null)
   const { viewport } = useThree()
-  useFrame(({ clock, mouse }) => {
+  const z = 1
+  const prev = new THREE.Vector3(0, 0, z)
+  useFrame(({ clock, pointer }) => {
     if (!meshRef?.current) {
       return
     }
-    const x = (mouse.x * viewport.width) / 10
-    const y = (mouse.y * viewport.height) / 10
-    meshRef.current.lookAt(x, y, 1)
-    meshRef.current.rotation.x += Math.cos(clock.getElapsedTime() / 4) / 10
-    meshRef.current.rotation.y += Math.sin(clock.getElapsedTime() / 2) / 10
+
+    const cur = new THREE.Vector3(
+      THREE.MathUtils.lerp(prev.x, (pointer.x * viewport.width + Math.sin(clock.getElapsedTime())) / 10, 0.1),
+      THREE.MathUtils.lerp(prev.y, (pointer.y * viewport.height + Math.cos(clock.getElapsedTime())) / 10, 0.1),
+      z
+    )
+    meshRef.current.lookAt(cur)
+    prev.copy(cur)
   })
 
   return (
