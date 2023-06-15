@@ -2,8 +2,18 @@
 import * as THREE from 'three'
 import { Suspense, useImperativeHandle, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Preload, PerspectiveCamera, View, Text3D, Center, AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
+import {
+  Preload,
+  PerspectiveCamera,
+  View,
+  Text3D,
+  Center,
+  AdaptiveDpr,
+  AdaptiveEvents,
+  useFont,
+} from '@react-three/drei'
 import tunnelRat from 'tunnel-rat'
+import fontTypeface from 'three/examples/fonts/helvetiker_regular.typeface.json'
 
 const tunnel = tunnelRat()
 
@@ -52,6 +62,7 @@ export default function Client() {
 }
 
 function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElement> }) {
+  const font = useFont(fontTypeface as any)
   const meshRef = useRef<THREE.Mesh>(null)
   const { viewport } = useThree()
   const z = 1
@@ -75,7 +86,7 @@ function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElemen
       <mesh ref={meshRef as any}>
         <Center>
           <Text3D
-            font={'/helvetiker_regular.typeface.json'}
+            font={font.data}
             size={0.5}
             height={0.01}
             curveSegments={20}
