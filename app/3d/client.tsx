@@ -1,6 +1,6 @@
 'use client'
 import * as THREE from 'three'
-import { Suspense, useImperativeHandle, useRef } from 'react'
+import { Suspense, useImperativeHandle, useRef, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import {
   Preload,
@@ -14,6 +14,7 @@ import {
 } from '@react-three/drei'
 import tunnelRat from 'tunnel-rat'
 import fontTypeface from 'three/examples/fonts/helvetiker_regular.typeface.json'
+import styles from './page.module.css'
 
 const tunnel = tunnelRat()
 
@@ -22,37 +23,20 @@ export default function Client() {
   const containerRef = useRef<HTMLElement>(null)
   useImperativeHandle<HTMLElement | null, HTMLElement | null>(wrapperRef, () => containerRef.current)
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+  })
+
   return (
-    <div
-      ref={wrapperRef as React.RefObject<HTMLDivElement>}
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        overflow: 'auto',
-        touchAction: 'auto',
-      }}
-    >
-      <div
-        ref={containerRef as React.RefObject<HTMLDivElement>}
-        style={{
-          width: '100vw',
-          height: '100vh',
-        }}
-      >
+    <div ref={wrapperRef as React.RefObject<HTMLDivElement>} className={styles.wrapper}>
+      <div ref={containerRef as React.RefObject<HTMLDivElement>} className={styles.container}>
         <tunnel.In>
           <ClientView containerRef={containerRef} />
         </tunnel.In>
       </div>
       <Canvas
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          pointerEvents: 'none',
-        }}
+        className={styles.canvas}
+        style={{ position: 'fixed' }}
         eventSource={wrapperRef as any}
         eventPrefix="client"
       >
