@@ -36,6 +36,7 @@ export default function Client() {
       <div
         ref={containerRef as React.RefObject<HTMLDivElement>}
         style={{
+          width: '100vw',
           height: '100vh',
         }}
       >
@@ -67,6 +68,7 @@ function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElemen
   const { viewport } = useThree()
   const z = 1
   const prev = new THREE.Vector3(0, 0, z)
+  const space = viewport.width > viewport.height ? ' ' : '\n '
   useFrame(({ clock, pointer }) => {
     if (!meshRef?.current) {
       return
@@ -95,7 +97,7 @@ function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElemen
             bevelSize={0.02}
             bevelSegments={20}
           >
-            Arseny Razin
+            Arseny{space}Razin
             <meshPhongMaterial color={'black'} specular={'white'} shininess={30} />
           </Text3D>
         </Center>
