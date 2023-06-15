@@ -89,8 +89,8 @@ function ClientView({ containerRef }: { containerRef: React.RefObject<HTMLElemen
 
       <Suspense fallback={null}>
         <ambientLight intensity={0.1} />
-        <pointLight position={[20, 30, 10]} intensity={1} />
-        <pointLight position={[-20, 30, -10]} intensity={0.5} />
+        <pointLight position={[20, 30, 20]} intensity={1} />
+        <pointLight position={[-20, 30, -20]} intensity={0.5} />
         <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         <Preload all />
       </Suspense>

@@ -1,7 +1,7 @@
 import Client from './client'
 
 export const metadata = {
-  title: '3D - Arseny Razin',
+  title: 'Arseny Razin',
   robots: {
     index: false,
   },
