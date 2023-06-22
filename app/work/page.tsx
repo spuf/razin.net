@@ -12,7 +12,7 @@ export const metadata = {
 export default function Work() {
   const resume = {
     fullName: 'Arseny Razin',
-    email: 'arseny@razin.net',
+    email: 'a@razin.net',
     github: 'spuf',
     workExperience: [
       {
