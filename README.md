@@ -1,1 +1,1 @@
-[arseny.razin.net](https://arseny.razin.net)
+[razin.net](https://razin.net)
