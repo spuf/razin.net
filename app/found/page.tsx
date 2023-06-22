@@ -9,7 +9,7 @@ export default function Found() {
   return (
     <div>
       <div style={{ margin: '1rem' }}>
-        <a href="mailto:arseny@razin.net">arseny@razin.net</a>
+        <a href="mailto:a@razin.net">a@razin.net</a>
       </div>
     </div>
   )
