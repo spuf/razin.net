@@ -5,15 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx --yes serve out",
     "lint": "next lint",
     "check": "tsc",
     "fmt": "prettier --ignore-path .gitignore --write .",
     "test": "npm run fmt && npm run check && npm run lint",
-    "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v$(node -e \"console.log(require('./package.json').devDependencies['@playwright/test'])\") npx playwright test -u"
+    "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v$(node -e \"console.log(require('./package.json').dependencies['@playwright/test'])\") npx playwright test -u"
   },
   "dependencies": {
-    "@playwright/test": "1.35.0",
+    "@playwright/test": "1.35.1",
     "@react-three/drei": "^9.74.15",
     "@react-three/fiber": "^8.13.3",
     "@types/luxon": "^3.0.0",
