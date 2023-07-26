@@ -16,15 +16,39 @@ export default function Work() {
     github: 'spuf',
     workExperience: [
       {
-        start: '2017-01-01',
+        start: '2021-08-01',
         end: null,
         company: 'ONDOC',
-        website: 'https://ondoc.me',
-        position: 'Backend Engineer',
+        website: 'https://ondoc.clinic',
+        position: 'Principal Software Engineer',
         achiements: [
-          'Maintaining infrastructure on bare-metal servers.',
-          'Introducing architectural practice to achieve fast feature implementation.',
-          'Evaluating system to comply with government restrictions.',
+          'Evaluated telemedicine system to comply with government regulations.',
+          'Managed developers and DevOps teams.',
+          'Introduced microservices architecture using Node.js and Go.',
+          'Maintained infrastructure on bare-metal servers.',
+        ],
+      },
+      {
+        start: '2017-01-01',
+        end: '2021-07-01',
+        company: 'ONDOC',
+        website: 'https://ondoc.clinic',
+        position: 'Senior Software Engineer',
+        achiements: [
+          'Improved continuous delivery for web service using GitOps.',
+          'Introduced architectural approaches to speed up the new features implementation.',
+          'Migrated application from MySQL database to PostgreSQL.',
+          'Resolved numerous issues with Elasticsearch and work queue platforms.',
+        ],
+      },
+      {
+        start: '2022-09-01',
+        end: '2023-06-01',
+        company: 'ITMO University',
+        website: 'https://en.itmo.ru/',
+        position: 'Sep 2022 - Jun 2023',
+        achiements: [
+          'Led frontend and backend web development workshops at the Faculty of Information Technology and Programming.',
         ],
       },
       {
@@ -32,10 +56,10 @@ export default function Work() {
         end: '2016-12-01',
         company: 'Encoding.com',
         website: 'https://www.encoding.com',
-        position: 'Backend Engineer',
+        position: 'Senior Software Engineer',
         achiements: [
-          'Maintaining in-house advertising analytics system.',
-          'Developing validation framework for video encoding.',
+          'Developed validation framework for video encoding workflows.',
+          'Maintained in-house advertising and analytics platform.',
         ],
       },
       {
@@ -43,11 +67,12 @@ export default function Work() {
         end: '2016-05-01',
         company: 'Dalee Internet Agency',
         website: 'https://www.dalee.ru',
-        position: 'Full Stack Developer',
+        position: 'Senior Software Engineer',
         achiements: [
-          'Developing websites from small landing pages to national mobile providers.',
-          'Refactoring ancient microservices to run them in cloud environments.',
-          'Introducing continuous integration and containerization to current workflows.',
+          'Developed website for a national mobile provider using PHP, JavaScript, PostgreSQL.',
+          'Introduced continuous delivery and containerization.',
+          'Refactored integration services (C, Ruby, Python) to run them in Docker environment.',
+          'Developed advertising platform using Node.js.',
         ],
       },
       {
@@ -55,10 +80,10 @@ export default function Work() {
         end: '2014-01-01',
         company: '2Comrades',
         website: 'http://twocomrades.ru',
-        position: 'JavaScript Developer',
+        position: 'Software Engineer',
         achiements: [
-          'Developing a cloud platform for taxi and transport services.',
-          'Working with different maps services APIs.',
+          'Developed the frontend part of a web service for monitoring and ordering freight transportation using various JavaScript libraries.',
+          'Integrated API of various mapping services.',
         ],
       },
       {
@@ -66,11 +91,10 @@ export default function Work() {
         end: '2013-08-01',
         company: 'AwardWallet LLC',
         website: 'https://awardwallet.com',
-        position: 'Full Stack Developer',
+        position: 'Software Engineer',
         achiements: [
-          'Refactoring monolith PHP application.',
-          'Developing API gateways to collect and consolidate data from numerous travel agencies.',
-          'Maintaining mobile application.',
+          'Developed web service for tracking reward program accounts using Symfony framework (PHP) and MySQL database.',
+          'Developed MVP of cross-platform mobile application using PhoneGap platform (JavaScript, Objective-C, Java).',
         ],
       },
       {
@@ -78,8 +102,11 @@ export default function Work() {
         end: '2010-08-01',
         company: 'ER-Telecom Holding',
         website: 'https://ertelecom.ru',
-        position: 'PHP Developer',
-        achiements: ['Developing intranet websites.'],
+        position: 'Software Engineer',
+        achiements: [
+          'Developed corporate web portal for employee surveys and engagement using the Drupal platform (PHP).',
+          'Closed all hanging tasks in the team`s backlog.',
+        ],
       },
     ],
     education: [
@@ -88,19 +115,19 @@ export default function Work() {
         end: '2015-06-01',
         school: 'National Research University Higher School of Economics',
         location: 'Russia',
-        degree: "Master's degree in Software\u00A0Engineering",
+        degree: 'Master`s degree, System and Software Engineering',
       },
       {
         start: '2009-09-01',
         end: '2013-06-01',
         school: 'National Research University Higher School of Economics',
         location: 'Russia',
-        degree: "Bachelor's degree in Business\u00A0Informatics",
+        degree: 'Bachelor`s degree, Business Informatics',
       },
     ],
     skills: [
-      'Primary: Go, Node.js, PHP (Symfony), PostgreSQL, Redis, Docker, Ansible.',
-      'Secondary: React, Python, Nginx, Linux.',
+      'Primary: Go, Node.js, PHP, PostgreSQL, Redis, Docker, Ansible.',
+      'Secondary: React.js, Python, Nginx, Linux.',
     ],
   }
 
