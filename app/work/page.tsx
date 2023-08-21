@@ -46,7 +46,7 @@ export default function Work() {
         end: '2023-06-01',
         company: 'ITMO University',
         website: 'https://en.itmo.ru/',
-        position: 'Sep 2022 - Jun 2023',
+        position: 'Part-time Tutor',
         achiements: [
           'Led frontend and backend web development workshops at the Faculty of Information Technology and Programming.',
         ],
