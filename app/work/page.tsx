@@ -100,7 +100,7 @@ export default function Work() {
       {
         start: '2010-07-01',
         end: '2010-08-01',
-        company: 'ER-Telecom Holding',
+        company: 'ER-Telecom',
         website: 'https://ertelecom.ru',
         position: 'Software Engineer',
         achiements: [
@@ -164,7 +164,7 @@ export default function Work() {
             </div>
             <div className={styles.dates}>
               {DateTime.fromISO(v.start).toFormat('LLL yyyy')} &ndash;{' '}
-              {v.end ? DateTime.fromISO(v.end).toFormat('LLL yyyy') : 'present time'}
+              {v.end ? DateTime.fromISO(v.end).toFormat('LLL yyyy') : 'Present'}
             </div>
             <ul>
               {v.achiements.map((a) => (
