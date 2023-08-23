@@ -13,9 +13,7 @@
     "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v$(node -e \"console.log(require('./package.json').dependencies['@playwright/test'])\") npx playwright test -u"
   },
   "dependencies": {
-    "@playwright/test": "1.35.1",
-    "@react-three/drei": "^9.74.15",
-    "@react-three/fiber": "^8.13.3",
+    "@playwright/test": "1.37.1",
     "@types/luxon": "^3.0.0",
     "@types/node": "^20.1.2",
     "@types/react": "^18.0.9",
@@ -24,7 +22,7 @@
     "eslint-config-next": "^13.0.0",
     "luxon": "^3.0.0",
     "next": "^13.0.0",
-    "prettier": "^2.6.2",
+    "prettier": "^3.0.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sanitize.css": "^13.0.0",
