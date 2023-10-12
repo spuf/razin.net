@@ -12,8 +12,24 @@ export const metadata = {
 export default function Work() {
   const resume = {
     fullName: 'Arseny Razin',
-    email: 'a@razin.net',
-    github: 'spuf',
+    contacts: [
+      {
+        link: 'mailto:a@razin.net',
+        text: 'a@razin.net',
+      },
+      {
+        link: 'https://t.me/arsenyme',
+        text: 't.me/arsenyme',
+      },
+      {
+        link: 'https://linkedin.com/in/arsenyrazin',
+        text: 'linkedin.com/in/arsenyrazin',
+      },
+      {
+        link: 'https://github.com/spuf',
+        text: 'github.com/spuf',
+      },
+    ],
     workExperience: [
       {
         start: '2021-08-01',
@@ -139,16 +155,13 @@ export default function Work() {
             {resume.fullName}
           </Link>
         </h1>
-        <div className={styles.contact}>
-          <a href={`mailto:${resume.email}`} target="_blank" rel="noreferrer">
-            {resume.email}
-          </a>
-        </div>
-        <div className={styles.contact}>
-          <a href={`https://github.com/${resume.github}`} target="_blank" rel="noreferrer">
-            github.com/{resume.github}
-          </a>
-        </div>
+        {resume.contacts.map((v) => (
+          <div key={v.link} className={styles.contact}>
+            <a href={v.link} target="_blank" rel="noreferrer">
+              {v.text}
+            </a>
+          </div>
+        ))}
       </div>
       <div className={styles.title}>
         <h2>Work experience</h2>
