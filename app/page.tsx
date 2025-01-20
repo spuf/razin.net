@@ -1,12 +1,12 @@
 import styles from './page.module.css'
 
 export const metadata = {
-  title: 'Arseny Razin',
+  title: 'razin.net',
 }
 export default function Index() {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>Arseny Razin</h1>
+      <h1 className={styles.title}>razin.net</h1>
     </main>
   )
 }
