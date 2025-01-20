@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Found - Arseny Razin',
+  title: 'Found - razin.net',
   robots: {
     index: false,
   },
