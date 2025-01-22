@@ -3,29 +3,25 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "npx --yes serve out",
-    "lint": "next lint",
-    "check": "tsc",
-    "fmt": "prettier --ignore-path .gitignore --write .",
-    "test": "npm run fmt && npm run check && npm run lint",
-    "screenshot": "docker run --rm --ipc=host --init -v $PWD:$PWD -w $PWD mcr.microsoft.com/playwright:v$(node -e \"console.log(require('./package.json').dependencies['@playwright/test'])\") npx playwright test -u"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@playwright/test": "1.39.0",
-    "@types/luxon": "^3.0.0",
-    "@types/node": "^20.1.2",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.3",
-    "eslint": "^8.15.0",
-    "eslint-config-next": "^13.0.0",
-    "luxon": "^3.0.0",
-    "next": "^13.0.0",
-    "prettier": "^3.0.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "sanitize.css": "^13.0.0",
-    "typescript": "^5.0.4"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.1.6"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "@eslint/eslintrc": "^3"
   }
 }
